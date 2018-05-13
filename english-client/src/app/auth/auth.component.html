@@ -1,0 +1,23 @@
+<div class="auth">
+    <div class="auth_block">
+        <div class="auth_block_name-style">{{auctionName}}</div>
+        <div>
+            <input pInputText type="text"
+                   [(ngModel)]="username"
+                   [placeholder]="usernamePlaceholder"
+                   class="auth_block_input-style">
+        </div>
+        <div>
+            <input pPassword type="password"
+                   [(ngModel)]="password"
+                   [placeholder]="passwordPlaceholder"
+                   class="auth_block_input-style"
+                   [feedback]="false"
+            >
+        </div>
+        <div style="padding-left: 28%">
+            <button pButton type="button" (click)="onSignIn()" [label]="signIn" class="ui-button-warning"></button>
+            <button pButton type="button" [label]="signUp" class="ui-button-warning"></button>
+        </div>
+    </div>
+</div>
