@@ -6,8 +6,6 @@
                    [(ngModel)]="username"
                    [placeholder]="usernamePlaceholder"
                    class="auth_block_input-style">
-        </div>
-        <div>
             <input pPassword type="password"
                    [(ngModel)]="password"
                    [placeholder]="passwordPlaceholder"
@@ -15,9 +13,17 @@
                    [feedback]="false"
             >
         </div>
-        <div style="padding-left: 28%">
+        <div>
+            <p-message
+                    [ngStyle]="{'opacity': visibleError ? '1' : '0'}"
+                    style="padding-left: 16%"
+                    [severity]="'error'"
+                    [text]="errorMessage"
+            ></p-message>
+        </div>
+        <div style="padding-left: 28%; padding-top: 10px">
             <button pButton type="button" (click)="onSignIn()" [label]="signIn" class="ui-button-warning"></button>
-            <button pButton type="button" [label]="signUp" class="ui-button-warning"></button>
+            <button pButton type="button" (click)="onLogout()" [label]="signUp" class="ui-button-warning"></button>
         </div>
     </div>
 </div>

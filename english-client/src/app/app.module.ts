@@ -5,12 +5,17 @@ import {RouterModule} from "@angular/router";
 import {AuthModule} from "./auth/auth.module";
 import {appRoutes} from "./routers";
 import {Providers} from "./providers.index";
+import {StoreModule} from "@ngrx/store";
+import {Reducers} from "./shared/reducers";
+import {MainPageModule} from "./components/main-page/main-page.module";
 
 @NgModule({
     imports: [
         BrowserModule,
         RouterModule.forRoot(appRoutes, {useHash: true}),
-        AuthModule
+        StoreModule.forRoot(Reducers),
+        AuthModule,
+        MainPageModule
     ],
     declarations: [
         AppComponent

@@ -5,6 +5,7 @@ export abstract class LocalizationService {
     passwordLabel: string;
     signIn: string;
     signUp: string;
+    accessDenied: string;
 
     vagrantionName: string;
 }
@@ -13,6 +14,7 @@ export abstract class LocalizationService {
 export class EngLocalizationService extends LocalizationService {
     constructor() {
         super();
+        this.accessDenied = "Access denied";
         this.usernameLabel = "Username";
         this.passwordLabel = "Password";
         this.signUp = "Sign Up";
